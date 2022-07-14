@@ -18,7 +18,6 @@ class Phrase:
                 phrase_state += letter
             else:
                 phrase_state += "_"
-        print()
         print(f"The secret phrase is: {phrase_state}".center(79))
         print()
 

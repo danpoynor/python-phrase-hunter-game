@@ -10,7 +10,6 @@ from .phrase import Phrase
 
 class Game:
     def __init__(self):
-
         self.missed = 0
         self.correct = 0
         self.phrases = self.create_phrases()
@@ -26,7 +25,6 @@ class Game:
 
     @staticmethod
     def welcome():
-        print()
         print(f"="*79)
         print("Welcome to Phrase Hunter!".center(79))
         print("Guess the phrase before you run out of turns.".center(79))
@@ -56,6 +54,7 @@ class Game:
     def is_valid_guess(guess):
         # Check if the user input is more than 1 character, or input
         # is not a letter (a through z).
+        # TODO: Shorten to one return statement.
         if len(guess) == 1 and guess.isalpha():
             return True
         else:
@@ -134,16 +133,16 @@ class Game:
                 letters_correct = self.guesses & self.active_phrase_letters_set
                 # Get Difference between guesses and active_phrase_letters Sets.
                 letters_incorrect = self.guesses - letters_correct
-                print()
-                print("=================== SCOREBOARD ===================".center(79))
-                print(f"All guesses so far: {', '.join(self.guesses)}".center(79))
-                print("------------------------------------------------".center(79))
-                print(f"{self.correct} correct guesses: {', '.join(letters_correct)}".center(79))
-                print(f"You have {letters_remaining} letters remaining.".center(79))
-                print("------------------------------------------------".center(79))
-                print(f"{self.missed} missed guesses: {', '.join(letters_incorrect)}".center(79))
-                print(f"You have {5 - self.missed} misses remaining.".center(79))
-                print("==================================================".center(79))
+                print(
+                    "=========================== SCOREBOARD ===========================".center(79))
+                print(
+                    f"{self.correct} correct guesses so far: {', '.join(letters_correct)} - {letters_remaining} letters remaining.".center(79))
+                print(
+                    "------------------------------------------------------------".center(79))
+                print(
+                    f"{self.missed} missed guesses so far: {', '.join(letters_incorrect)} - {5 - self.missed} misses remaining.".center(79))
+                print(
+                    "==================================================================".center(79))
                 print()
 
             # Get user's next guess.
