@@ -136,11 +136,11 @@ class Game:
                 print(
                     "=========================== SCOREBOARD ===========================".center(79))
                 print(
-                    f"{self.correct} correct guesses so far: {', '.join(letters_correct)} - {letters_remaining} letters remaining.".center(79))
+                    f"{self.correct} correct guesses so far: {', '.join(letters_correct)} - {letters_remaining} remaining.".center(79))
                 print(
                     "------------------------------------------------------------".center(79))
                 print(
-                    f"{self.missed} missed guesses so far: {', '.join(letters_incorrect)} - {5 - self.missed} misses remaining.".center(79))
+                    f"{self.missed} missed guesses so far: {', '.join(letters_incorrect)} - {5 - self.missed} remaining.".center(79))
                 print(
                     "==================================================================".center(79))
                 print()
