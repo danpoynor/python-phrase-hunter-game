@@ -26,6 +26,58 @@ python3 app.py
 
 NOTE: Python 3.10 was used to develop and test this app.
 
+## Run Unit Tests
+
+Some basic unit tests are included to test the `dm.py` module.
+
+<details>
+  <summary>Expand/Collapse</summary>
+To run the tests, use something like:
+
+
+```bash
+python3 -m unittest -v tests.test_game
+```
+
+and you should see some test result output like this:
+
+```bash
+test_active_phrase_display (tests.test_game.GameTestCase) ... ok
+test_check_guess_in_phrase (tests.test_game.GameTestCase) ... ok
+test_game_over_loser (tests.test_game.GameTestCase) ... skipped "TODO: When there's more time"
+test_game_over_winner (tests.test_game.GameTestCase) ... skipped "TODO: When there's more time"
+test_get_random_phrase_returns_a_string (tests.test_game.GameTestCase) ... ok
+test_is_valid_guess (tests.test_game.GameTestCase) ... ok
+test_scoreboard_stats (tests.test_game.GameTestCase) ... skipped "TODO: When there's more time, test this"
+test_should_include_at_least_5_phrases (tests.test_game.GameTestCase) ... ok
+test_welcome_message (tests.test_game.GameTestCase) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.002s
+
+OK (skipped=3)
+```
+
+Note: If you run the command without the -v flag, such as:
+
+```bash
+python3 -m unittest tests.test_game
+```
+
+You should see test result output like this:
+
+```bash
+..ss..s..
+----------------------------------------------------------------------
+Ran 9 tests in 0.002s
+
+OK (skipped=3)
+```
+
+The `..ss..s..` indicates six tests ran and three were skipped.
+
+</details>
+
 ---
 
 ## Screen Recording Showing Some Example Game States
