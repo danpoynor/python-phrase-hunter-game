@@ -51,14 +51,24 @@ class Game:
         return input("\nGuess a letter: ").lower()
 
     @staticmethod
-    def is_valid_guess(guess):
-        # Check if the user input is more than 1 character, or input
-        # is not a letter (a through z).
-        # TODO: Shorten to one return statement.
-        if len(guess) == 1 and guess.isalpha():
-            return True
-        else:
+    def is_valid_guess(self, guess):
+        if len(guess) > 1:
+            print("-"*79)
+            print("Please enter a single letter character (a-z).")
+            print("-"*79)
             return False
+        elif not guess.isalpha():
+            print("-"*79)
+            print("\nPlease enter a letter (a-z).")
+            print("-"*79)
+            return False
+        elif guess in self.guesses:
+            print("-"*79)
+            print("\nYou already guessed that letter. Try again.")
+            print("-"*79)
+            return False
+        else:
+            return True
 
     def check_guess_in_phrase(self):
         # Check if the user's guess is in the phrase and update counts.
@@ -148,11 +158,8 @@ class Game:
             # Get user's next guess.
             self.user_guess = self.get_guess()
 
-            while not self.is_valid_guess(self.user_guess):
+            while not self.is_valid_guess(self, self.user_guess):
                 print()
-                print("-"*79)
-                print("Please enter a single letter character (a-z).")
-                print("-"*79)
                 self.user_guess = self.get_guess()
             else:
                 # Add 'self.user_guess' value to the 'self.guesses' set().
