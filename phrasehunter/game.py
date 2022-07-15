@@ -25,11 +25,11 @@ class Game:
 
     @staticmethod
     def welcome():
-        print(f"="*79)
+        print("="*79)
         print("Welcome to Phrase Hunter!".center(79))
         print("Guess the phrase before you run out of turns.".center(79))
         print("5 misses and you loose the game. Good luck!".center(79))
-        print(f"="*79)
+        print("="*79)
         print()
 
     @staticmethod
