@@ -18,7 +18,7 @@ Features
 
 ## Run the app
 
-After cloning the repository to your local hard-drive, `cd` into the 'python-phrase-hunter-game` directory and run the following command in the terminal:
+After cloning the repository to your local hard-drive, `cd` into the `python-phrase-hunter-game` directory and run the following command in the terminal:
 
 ```bash
 python3 app.py
@@ -26,13 +26,16 @@ python3 app.py
 
 NOTE: Python 3.10 was used to develop and test this app.
 
+---
+
 ## Run Unit Tests
 
-Some basic unit tests are included to test the `dm.py` module.
+Some basic unit tests are included to test the game play.
 
 <details>
   <summary>Expand/Collapse</summary>
-To run the tests, use something like:
+
+To run the tests, after `cd`'ing into the `python-phrase-hunter-game` directory, use something like:
 
 
 ```bash
@@ -74,7 +77,7 @@ Ran 9 tests in 0.002s
 OK (skipped=3)
 ```
 
-The `..ss..s..` indicates six tests ran and three were skipped.
+The `..ss..s..` indicates nine tests found but three were skipped.
 
 </details>
 
